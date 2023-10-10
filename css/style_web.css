@@ -1,0 +1,251 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root{
+	--bgcolor :#afaba0;
+	--secondcolor :#5c6165;
+	--textcolor:#5c718c;
+}
+
+body{
+	font-family: arial;
+	font-size: 	18px;
+	color: var(--secondcolor);	
+	background-color: var(--secondcolor);
+}
+h1, h2, h3{
+	color: #232325;
+}
+
+.container{
+	margin: 20px 50px 20px; /*atas kanan bawah kiri*/
+
+}
+
+/*header*/
+.header{
+	/*border: 3px solid gray;*/
+	box-shadow: 0 0 1rem gray;
+	display: grid;
+	grid-template-areas: 'hero home';
+	
+	place-items: center;
+	background-color: white;
+}
+.home{
+	grid-area: 	home;
+	padding: 100px;
+	text-align: justify;
+}
+
+.home h1{
+	font-size: 	3.5rem;
+	font-weight: bold;
+	/*color: var(--secondcolor);*/
+	/*border: 6px solid gray;*/
+}
+
+.home p{
+	padding: 10px 0px 10px;
+}
+
+.hero{
+	grid-area: 	hero;
+	/*background-color: 	blue;*/
+	/*align-items: left;*/
+}
+
+.hero img{	
+	width: 	100%;
+}
+
+.icon{
+	padding-bottom: 2px;
+}
+
+.icon a{
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	background: transparent;
+	border: .2rem solid var(--textcolor);
+	padding: 1px;
+	border-radius: 50%;
+	font-size: 1.5rem;
+	color: var(--textcolor);
+	transition: .5s ease;
+	text-decoration: none;
+}
+
+.icon a:hover{
+	padding: 0 25px 0;
+	/*background: var(--bgcolor);*/
+	color: darkblue/*var(--textcolor)*/;
+	border: .2rem solid darkblue/*var(--secondcolor)*/;
+	box-shadow: 0 0 1rem darkblue/*var(--textcolor)*/;
+}
+.btn{
+	margin-top: 10px;
+	display: inline-block;
+	padding: 1rem 2rem;
+	background: var(--textcolor);
+	border-radius: 4rem;
+	
+	font-size: 1rem;
+	color: white/*var(--second-bg-color)*/;
+	letter-spacing: .1rem;
+	font-weight: 600;
+	transition: .5s ease;
+	text-decoration: none;
+}
+
+.btn:hover{
+	box-shadow: 0 0 1rem blue;
+	background: /*var(--textcolor)*/darkblue;
+}
+
+/*tentang*/
+
+.tentang{
+	display: grid;
+	padding: 30px;
+	background-color: var(--bgcolor);
+	gap: 10px;
+	text-align: justify;
+	font-size: 16px;
+	color: black;
+}
+
+.project{
+	display: grid;
+	padding: 5px 20px 0;
+	grid-template-areas: 
+	"gambar judul judul"
+	"gambar teks teks";
+	
+	background-color: #fff;
+	text-align: justify;
+}
+
+.gambar{
+	grid-area: gambar;
+
+}
+
+.gambar img{
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+}
+
+.judul{
+	grid-area: judul;
+	padding: 20px;
+	
+}
+
+.teks{
+	grid-area: teks;
+	padding: 0 20px 0;
+	font-size: 16px;
+}
+
+footer{
+	display: grid;
+	grid-template-areas: 
+	'logo bahasa layanan'
+	'copyright copyright copyright';
+	text-align: center;
+	padding: 25px 0	0;
+	background-color: gray;
+	color: white;
+	font-size: 16px;
+	line-height: 1.5;
+}
+footer h4{
+	padding: 5px;
+}
+
+.logo{
+	grid-area: logo;
+	padding-bottom: 20px;
+}
+.bahasa{
+	grid-area: bahasa;
+	padding-bottom: 20px;
+}
+.layanan{
+	grid-area: layanan;
+}
+.copyright{
+	grid-area: copyright;
+	background-color: white;
+	color: black;
+	padding: 5px;
+	font-size: 14px;
+	color: var(--secondcolor);	
+}
+
+@media (max-width: 600px){
+	*{
+
+	}
+	body{
+		
+		box-sizing: border-box;
+	}
+	.header{
+		grid-template-areas:
+		'hero'
+		'home';
+		
+		text-align: center; 
+		padding: 0px;
+		
+	}
+	.hero{
+		grid-area: hero;
+	}
+
+	.home{
+		grid-area: home;
+		padding: 20px;
+		/*background-color: red;*/
+		text-align: center;
+	}
+	.project{
+		grid-template-areas: 
+		'gambar'
+		'judul'
+		'teks';
+		padding-bottom: 20px;
+	}
+	.gambar{
+		grid-area: gambar;
+	}
+	footer{
+		grid-template-areas:
+		'logo logo'
+		'bahasa layanan'
+		'copyright copyright';
+	}
+
+	.logo{
+		grid-area: logo;
+		text-align: center;
+	}
+
+	.bahasa{
+		grid-area: bahasa;
+	}
+
+	.layanan{
+		grid-area: layanan;
+	}
+	
+}
+
